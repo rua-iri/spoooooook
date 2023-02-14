@@ -1,0 +1,7 @@
+.main-section {
+    background-color: rgba(231, 47, 47, 0.884);
+    height: 89vh;
+    width: auto;
+    overflow-y: scroll;
+}
+

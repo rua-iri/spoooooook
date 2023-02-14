@@ -1,0 +1,8 @@
+.category {
+    height: 35vh;
+    margin: 2vh 0;
+    background-color: grey;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}

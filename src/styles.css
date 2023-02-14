@@ -1,0 +1,8 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0;
+}
+
+.gimmie-outline {
+    outline: red 3px solid;
+}
