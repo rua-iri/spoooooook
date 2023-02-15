@@ -1,9 +1,31 @@
-<div class="category-title">
-    Category Title
-</div>
+<div class="category-container">
 
-<div class="category">
+    <div class="category-title">
+        Category Title
+    </div>
 
-    <app-film-item *ngFor="let flm of filmList" [film]="flm"></app-film-item>
+    <div class="category">
 
+        <div class="slider-button slider-left" (click)="cyclePrev()">
+            <svg fill="#000000" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 59.414 59.414" xml:space="preserve">
+                <polygon points="15.561,0 14.146,1.414 42.439,29.707 14.146,58 15.561,59.414 45.268,29.707 " />
+            </svg>
+        </div>
+
+        <div class="films-container" [style.transform]="'translateX('+ translateX + 'vw)'">
+            <app-film-item class="film-box" *ngFor="let flm of filmList" [film]="flm"></app-film-item>
+        </div>
+
+
+        <div class="slider-button slider-right" (click)="cycleNext()">
+            <svg fill="#000000" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 59.414 59.414" xml:space="preserve">
+                <polygon points="15.561,0 14.146,1.414 42.439,29.707 14.146,58 15.561,59.414 45.268,29.707 " />
+            </svg>
+        </div>
+
+    </div>
+
+    <app-film-menu></app-film-menu>
 </div>

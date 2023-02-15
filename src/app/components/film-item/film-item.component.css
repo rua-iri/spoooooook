@@ -1,17 +1,15 @@
 
 .film-item {
+    height: 26vh;
     width: 20vw;
     margin: 2vh;
-    padding: 1vh;
-    transition: transform 1s;
+    padding: 1vh 0;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: rgba(247, 243, 243, 0.603);
 }
 
-.film-item:hover {
-    transform: scale(1.5);
-}
 
 .film-poster {
     max-height: 23vh;
@@ -19,5 +17,8 @@
 
 .film-title {
     font-size: 5vh;
+    margin-top: -1rem;
+    background-color: rgba(247, 243, 243, 0.603);
+    width: 100%;
 }
 
