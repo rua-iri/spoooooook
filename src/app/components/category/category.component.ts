@@ -30,18 +30,37 @@ export class CategoryComponent {
     this.filmList = this.http.get<Film[]>(this.baseUrl + this.catName);
   }
 
-  // TODO if the list is at the beginning/end then
-  // it should automatically jump to the opposite side
 
   // functions to alter the x position of the list
   cycleNext() {
-    this.translateX -= 20;
+    this.filmList.subscribe((result) => {
+
+      console.log(this.translateX)
+
+      if(this.translateX<=((result.length-1) * -25)) {
+        this.translateX = 0;
+      } else {
+        this.translateX -= 25;
+      }
+
+    })
   }
 
   cyclePrev() {
     // only move left if the slider is not at the beginning
     if (this.translateX < 0) {
-      this.translateX += 20;
+      this.translateX += 25;
+
+    } else if (this.translateX === 0) {
+
+      this.filmList.subscribe((result) => {
+
+        for (let i = 0; i < result.length - 1; i++) {
+          this.translateX -= 25;
+        }
+
+      })
+
     }
   }
 

@@ -1,5 +1,5 @@
 <div class="video-section" *ngFor="let vidUrl of videoUrl | async">
-    <video controls>
-        <source src="{{ vidUrl.filmPath }}">
+    <video  controls>
+        <source src="{{ vidUrl.filmPath }}" type="video/mp4" >
     </video>
 </div>

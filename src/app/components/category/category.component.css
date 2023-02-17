@@ -1,6 +1,6 @@
 .category-container{
     margin-top: 5vh;
-    margin-bottom: 10vh;
+    margin-bottom: 15vh;
 }
 
 
@@ -15,19 +15,20 @@
 }
 
 .category-title {
-    font-size: 4vh;
+    font-family: Shlop;
+    font-size: 7vh;
     font-weight: 700;
 }
 
 .films-container {
     display: inherit;
-    transition: transform 1s;    
+    transition: transform 1.5s;    
 }
 
 .slider-button {
     width: 5vw;
     height: 100%;
-    background-color: rgba(22, 22, 22, 0.5);
+    background-color: rgba(22, 22, 22, 0.596);
     display: flex;
     align-items: center;
     position: absolute;
@@ -50,7 +51,7 @@
 }
 
 
-.slider-button svg:hover {
+.slider-button:hover svg {
     transform: scale(1.15);
 }
 

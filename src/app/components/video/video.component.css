@@ -6,3 +6,7 @@
     height: 89vh;
     background-color: rgba(0, 0, 0, 1);
 }
+
+.video-section video {
+    height: 85%;
+}
