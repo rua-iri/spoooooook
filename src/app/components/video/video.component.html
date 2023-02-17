@@ -1,5 +1,5 @@
-<p>video works!</p>
-
-<div>
-    {{ filmId }}
+<div class="video-section" *ngFor="let vidUrl of videoUrl | async">
+    <video controls>
+        <source src="{{ vidUrl.filmPath }}">
+    </video>
 </div>
