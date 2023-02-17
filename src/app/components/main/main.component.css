@@ -3,5 +3,11 @@
     height: 89vh;
     width: auto;
     overflow-y: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */  
+}
+
+.main-section::-webkit-scrollbar {
+    display: none;
 }
 

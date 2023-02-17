@@ -8,9 +8,16 @@ nav {
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    user-select: none;
 }
 
 nav a {
     text-decoration: unset;
-    color: unset
+    color: unset;
+    display: inline-flex;
+}
+
+#navbar-logo svg {
+    height: 5vh;
+    filter: invert(1);
 }

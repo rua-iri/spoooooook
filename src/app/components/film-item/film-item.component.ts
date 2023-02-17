@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Film } from 'src/app/film';
 
 @Component({
   selector: 'app-film-item',
@@ -7,7 +8,7 @@ import { Component, Input } from '@angular/core';
 })
 export class FilmItemComponent {
 
-  @Input() film: any;
+  @Input() film: Film;
 
 
 }

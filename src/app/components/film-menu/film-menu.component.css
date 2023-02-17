@@ -1,0 +1,41 @@
+.menu-section {
+    background-image: url("https://images.pexels.com/photos/531880/pexels-photo-531880.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+}
+
+.menu-details {
+    width: 35vw;
+    background-color: rgba(243, 232, 232, 0.685);
+    font-size: 3vh;
+    padding: 3vh;
+    border-radius: 0 10vh 10vh 0;
+}
+
+.film-title {
+    font-size: 5vh;
+}
+
+.film-description {
+    margin-top: 2vh;
+}
+
+.details-container {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.film-details {
+    margin-top: 2vh;
+}
+
+
+.play-button svg {
+    max-height: 10vh;
+}
+
+.play-button svg:hover {
+    opacity: 0.8;
+}
+
+.play-button svg:active {
+    opacity: 0.6;
+}

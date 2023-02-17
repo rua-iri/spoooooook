@@ -1,7 +1,7 @@
 <div class="category-container">
 
     <div class="category-title">
-        Category Title
+        {{ catName }} Films
     </div>
 
     <div class="category">
@@ -14,7 +14,7 @@
         </div>
 
         <div class="films-container" [style.transform]="'translateX('+ translateX + 'vw)'">
-            <app-film-item class="film-box" *ngFor="let flm of filmList" [film]="flm"></app-film-item>
+            <app-film-item class="film-box" *ngFor="let flm of filmList | async" [film]="flm" (click)="showMenu(flm.imdbID)"></app-film-item>
         </div>
 
 
@@ -27,5 +27,5 @@
 
     </div>
 
-    <app-film-menu></app-film-menu>
+    <app-film-menu [style.visibility]="menuVisible" [currentFilmId]="currentFilmId"></app-film-menu>
 </div>

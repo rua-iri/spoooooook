@@ -1,14 +1,22 @@
+.category-container{
+    margin-top: 5vh;
+    margin-bottom: 10vh;
+}
+
+
 .category {
-    height: 35vh;
     margin: 2vh 0;
     padding: 1vh;
     padding-left: 5vw;
-    background-color: grey;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    overflow: hidden;
     position: relative;
+}
+
+.category-title {
+    font-size: 4vh;
+    font-weight: 700;
 }
 
 .films-container {
@@ -23,7 +31,7 @@
     display: flex;
     align-items: center;
     position: absolute;
-    z-index: 2;
+    z-index: 3;
     cursor: pointer;
 }
 
@@ -50,8 +58,10 @@
 .film-box {
     transition: transform 1s;
     z-index: 1;
+    cursor: pointer;
 }
 
 .film-box:hover {
-    transform: scale(1.15);
+    transform: scale(1.05);
+    z-index: 2;
 }
