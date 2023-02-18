@@ -5,12 +5,12 @@
     overflow-y: scroll;
     overflow-x: hidden;
     -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */  
+    scrollbar-width: none;  /* Firefox */
 }
 
 .main-section::after {
     content: "";
-    background-image: url("/assets/images/10461659.jpg");
+    background-image: url("https://rua-iri.github.io/spoooooook/assets/images/10461659.jpg");
     position: absolute;
     top: 11vh;
     right: 0px;
