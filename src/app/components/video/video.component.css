@@ -4,7 +4,19 @@
     justify-content: center;
     align-items: center;
     height: 89vh;
-    background-color: rgba(0, 0, 0, 1);
+    background-color: rgba(0, 0, 0, 0.925);
+}
+
+.video-section::after {
+    content: "";
+    background-image: url("/assets/images/10461659.jpg");
+    position: absolute;
+    top: 11vh;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.7;
+    z-index: -1;
 }
 
 .video-section video {

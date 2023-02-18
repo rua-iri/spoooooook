@@ -1,5 +1,5 @@
 .main-section {
-    background-color: rgba(214, 19, 19, 0.856);
+    background-color: rgba(214, 19, 19, 0.829);
     height: 89vh;
     width: auto;
     overflow-y: scroll;
@@ -7,6 +7,19 @@
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */  
 }
+
+.main-section::after {
+    content: "";
+    background-image: url("/assets/images/10461659.jpg");
+    position: absolute;
+    top: 11vh;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.7;
+    z-index: -1;
+}
+
 
 .main-section::-webkit-scrollbar {
     display: none;

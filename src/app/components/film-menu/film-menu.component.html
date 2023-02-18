@@ -1,4 +1,4 @@
-<div *ngFor="let flm of filmSpecifics | async" class="menu-section">
+<div *ngFor="let flm of filmSpecifics | async" class="menu-section" [style.background-image]="'url(assets/images/backgrounds/' + currentFilmId +'.jpg)'">
 
     <div class="menu-details">
 
