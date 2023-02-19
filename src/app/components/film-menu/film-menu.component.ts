@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { FilmDetails } from 'src/app/filmDetails';
@@ -11,6 +11,7 @@ import { FilmDetails } from 'src/app/filmDetails';
 export class FilmMenuComponent implements OnChanges {
 
   @Input() currentFilmId: string;
+  @Output() menuVisible = new EventEmitter<string>();
   filmSpecifics: Observable<FilmDetails[]>
   readonly baseUrl: string = "https://zkxb1yonjc.execute-api.us-east-1.amazonaws.com/FilmDetails?imdbID=";
 
@@ -28,6 +29,10 @@ export class FilmMenuComponent implements OnChanges {
     if (this.currentFilmId) {
       this.filmSpecifics = this.http.get<FilmDetails[]>(this.baseUrl + this.currentFilmId);
     }
+  }
+
+  closeMenu() {
+    this.menuVisible.emit("none");
   }
 
 }

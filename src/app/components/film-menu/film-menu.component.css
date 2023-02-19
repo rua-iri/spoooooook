@@ -1,5 +1,6 @@
 .menu-section {
     background-size: cover;
+    position: relative;
 }
 
 .menu-details {
@@ -37,4 +38,12 @@
 
 .play-button svg:active {
     opacity: 0.6;
+}
+
+.close-button {
+    position: absolute;
+    top: 2vh;
+    right: 2vw;
+    color: white;
+    cursor: pointer;
 }

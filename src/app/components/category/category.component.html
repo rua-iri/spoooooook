@@ -27,5 +27,5 @@
 
     </div>
 
-    <app-film-menu [style.visibility]="menuVisible" [currentFilmId]="currentFilmId"></app-film-menu>
+    <app-film-menu [style.display]="menuVisible" [currentFilmId]="currentFilmId" (menuVisible)="menuVisibleHandler($event)"></app-film-menu>
 </div>

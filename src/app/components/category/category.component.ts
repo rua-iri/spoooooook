@@ -10,6 +10,11 @@ import { Film } from 'src/app/film';
 })
 export class CategoryComponent {
 
+  menuVisibleHandler(visibility: string) {
+    console.log(visibility);
+    this.menuVisible = visibility;
+  }
+
 
   @Input() catName: string;
   filmList: Observable<Film[]>;
@@ -22,7 +27,7 @@ export class CategoryComponent {
 
   ngOnInit() {
     this.getFilms();
-    this.menuVisible = "hidden"
+    this.menuVisible = "none"
     this.currentFilmId = "";
   }
 
@@ -37,7 +42,7 @@ export class CategoryComponent {
 
       console.log(this.translateX)
 
-      if(this.translateX<=((result.length-1) * -25)) {
+      if (this.translateX <= ((result.length - 1) * -25)) {
         this.translateX = 0;
       } else {
         this.translateX -= 25;
@@ -66,7 +71,7 @@ export class CategoryComponent {
 
 
   showMenu(imdbId: string) {
-    this.menuVisible = "visible";
+    this.menuVisible = "block";
     this.currentFilmId = imdbId;
   }
 
