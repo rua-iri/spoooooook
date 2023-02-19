@@ -10,11 +10,7 @@ import { Film } from 'src/app/film';
 })
 export class CategoryComponent {
 
-  menuVisibleHandler(visibility: string) {
-    console.log(visibility);
-    this.menuVisible = visibility;
-  }
-
+  // TODO only one menu should be allowed open at a time
 
   @Input() catName: string;
   filmList: Observable<Film[]>;
@@ -73,6 +69,12 @@ export class CategoryComponent {
   showMenu(imdbId: string) {
     this.menuVisible = "block";
     this.currentFilmId = imdbId;
+  }
+
+
+  menuVisibleHandler(visibility: string) {
+    console.log(visibility);
+    this.menuVisible = visibility;
   }
 
 }

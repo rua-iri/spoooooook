@@ -44,6 +44,17 @@
     position: absolute;
     top: 2vh;
     right: 2vw;
-    color: white;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(19, 18, 18, 0.24);
+    border-radius: 5rem;
+    height: 6.5vh;
+    width: 6.5vh;
+}
+
+.close-button svg {
+    filter: invert(1);
+    height: 5vh;
 }
