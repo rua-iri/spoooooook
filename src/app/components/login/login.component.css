@@ -1,0 +1,159 @@
+.main-section {
+    background-color: rgba(214, 19, 19, 0.829);
+    height: 89vh;
+    width: auto;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.main-section::after {
+    background-image: url("https://rua-iri.github.io/spoooooook/assets/images/10461659.jpg");
+    position: absolute;
+    top: 11vh;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.7;
+    z-index: -1;
+}
+
+
+.main-section::-webkit-scrollbar {
+    display: none;
+}
+
+.page-title {
+    margin: auto;
+    margin-top: 3vh;
+    width: 50%;
+    padding: 1rem 1rem 0 1rem;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.432);
+    font-size: 2rem;
+    font-family: Shlop;
+}
+
+.login-section {
+    margin: auto;
+    width: 50%;
+    align-items: center;
+    padding: 0 1rem 1rem 1rem;
+    background-color: rgba(0, 0, 0, 0.432);
+}
+
+.login-section div {
+    text-align: center;
+    margin-top: 3vh;
+}
+
+.login-section button {
+    margin: 3vh;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.login-input {
+    font-size: 1.25rem;
+    max-width: 100%;
+    line-height: 1.25;
+
+    border-radius: 6px;
+    padding: 0.25rem 0.25rem;
+    transition: box-shadow 100ms ease-in, border 100ms ease-in, background-color 100ms ease-in;
+    border: 2px solid #dee1e2;
+    color: rgb(14, 14, 16);
+    background: #dee1e2;
+    height: 36px;
+}
+
+.login-input:hover {
+    border-color: #ccc;
+}
+
+.login-input:focus{
+    border-color: #ff4747;
+    background: #fff;
+}
+
+.bottom-padding {
+    height: 20vh;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+
+    text-align: center;
+    width: 100%;
+}
+
+.footer-section {
+    bottom: 0;
+    background-color: rgba(1, 1, 1, 0.253);
+    width: inherit;
+    font-size: 5vh;
+    color: rgba(247, 236, 236, 0.589);
+    font-family: Shlop;
+}
+
+.footer-section a {
+    text-decoration: unset;
+    color: unset;
+}
+
+
+.botton {
+    appearance: none;
+    background-color: #ec3737;
+    border: 1px solid rgba(27, 31, 35, .15);
+    border-radius: 6px;
+    box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    padding: 1rem 2rem;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.botton:focus:not(:focus-visible):not(.focus-visible) {
+    box-shadow: none;
+    outline: none;
+}
+
+.botton:hover {
+    background-color: #972c2c;
+}
+
+.botton:focus {
+    box-shadow: rgba(164, 46, 46, 0.4) 0 0 0 3px;
+    outline: none;
+}
+
+.botton:disabled {
+    background-color: #d39494;
+    border-color: rgba(27, 31, 35, .1);
+    color: rgba(255, 255, 255, .8);
+    cursor: default;
+}
+
+.botton:active {
+    background-color: #8e2929;
+    box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
+}
+

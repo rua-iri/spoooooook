@@ -10,6 +10,8 @@ import { CategoryComponent } from './components/category/category.component';
 import { FilmItemComponent } from './components/film-item/film-item.component';
 import { FilmMenuComponent } from './components/film-menu/film-menu.component';
 import { VideoComponent } from './components/video/video.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { VideoComponent } from './components/video/video.component';
     CategoryComponent,
     FilmItemComponent,
     FilmMenuComponent,
-    VideoComponent
+    VideoComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
