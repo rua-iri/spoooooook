@@ -10,16 +10,15 @@
     <div class="login-section">
 
 
-        <br><br><br>
 
-        <form action="">
+        <form #loginForm="ngForm" (ngSubmit)="">
 
             <div>
                 <input class="login-input" type="text" placeholder="Username">
             </div>
 
             <div>
-                <input class="login-input" type="text" placeholder="Password">
+                <input class="login-input" type="password" placeholder="Password">
             </div>
 
             <div>

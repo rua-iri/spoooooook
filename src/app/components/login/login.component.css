@@ -11,6 +11,7 @@
 }
 
 .main-section::after {
+    content: "";
     background-image: url("https://rua-iri.github.io/spoooooook/assets/images/10461659.jpg");
     position: absolute;
     top: 11vh;
@@ -21,10 +22,10 @@
     z-index: -1;
 }
 
-
 .main-section::-webkit-scrollbar {
     display: none;
 }
+
 
 .page-title {
     margin: auto;
@@ -41,7 +42,7 @@
     margin: auto;
     width: 50%;
     align-items: center;
-    padding: 0 1rem 1rem 1rem;
+    padding: 1rem;
     background-color: rgba(0, 0, 0, 0.432);
 }
 
@@ -60,7 +61,6 @@
     font-size: 1.25rem;
     max-width: 100%;
     line-height: 1.25;
-
     border-radius: 6px;
     padding: 0.25rem 0.25rem;
     transition: box-shadow 100ms ease-in, border 100ms ease-in, background-color 100ms ease-in;
@@ -74,7 +74,7 @@
     border-color: #ccc;
 }
 
-.login-input:focus{
+.login-input:focus {
     border-color: #ff4747;
     background: #fff;
 }
@@ -86,12 +86,11 @@
     bottom: 0;
     width: 100%;
     text-align: center;
-
-    text-align: center;
     width: 100%;
 }
 
 .footer-section {
+    position: fixed;
     bottom: 0;
     background-color: rgba(1, 1, 1, 0.253);
     width: inherit;
@@ -120,7 +119,7 @@
     font-size: 14px;
     font-weight: 600;
     line-height: 20px;
-    padding: 1rem 2rem;
+    padding: 1rem 2.5rem;
     position: relative;
     text-align: center;
     text-decoration: none;
@@ -138,11 +137,13 @@
 
 .botton:hover {
     background-color: #972c2c;
+    color: #131111;
 }
 
 .botton:focus {
     box-shadow: rgba(164, 46, 46, 0.4) 0 0 0 3px;
     outline: none;
+    color: #131111;
 }
 
 .botton:disabled {
@@ -156,4 +157,3 @@
     background-color: #8e2929;
     box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
 }
-
