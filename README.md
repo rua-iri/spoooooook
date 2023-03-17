@@ -1,6 +1,8 @@
 # Spoooooook
 A Streaming Service for Public Domain Horror Films
 
+Can be found on my [Github Pages](https://rua-iri.github.io/spoooooook/)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.5.
 
 ## Development server
