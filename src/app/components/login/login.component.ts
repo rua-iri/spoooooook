@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { FormGroup, NgForm } from '@angular/forms';
+import { NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,19 +11,30 @@ import { HttpClient } from '@angular/common/http';
 export class LoginComponent {
 
   readonly baseUrl: string = "https://3z4kluwtp5.execute-api.us-east-1.amazonaws.com/real/login";
+  paramString: string;
+  errorMessage: string = "Error blahblalblbahalhbalh";
 
-  constructor(private http: HttpClient) { }
+
+  constructor(private http: HttpClient, private router: Router) { }
+
+  ngOnInit() {
+    if (sessionStorage.getItem("loggedIn") == "true") {
+      this.router.navigate(["/"]);
+    }
+  }
 
   onSubmit(loginForm: NgForm) {
-    // console.log(loginForm.value);
-    console.log(loginForm.value.username);
-    console.log(loginForm.value.password);
 
-    this.http.post(this.baseUrl, null, { "headers": { "username": loginForm.value.username, "password": loginForm.value.password } })
+    this.paramString = `?username=${loginForm.value.username}&password=${loginForm.value.password}`;
+
+    this.http.post<loginResponse>((this.baseUrl + this.paramString), null)
       .subscribe((result) => {
-        console.warn(result);
-        if (result.loginResult==true) {
-          // TODO login user and store something in session storage to keep them logged in
+        if (result.loginResult == true) {
+          sessionStorage.setItem("loggedIn", "true");
+          sessionStorage.setItem("username", loginForm.value.username);
+          this.router.navigate(["/"]);
+        } else {
+          this.errorMessage = "Error: Invalid Username or Password";
         }
       })
 
@@ -31,3 +43,6 @@ export class LoginComponent {
 
 }
 
+export interface loginResponse {
+  loginResult: boolean;
+}
