@@ -1,4 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -7,4 +10,63 @@ import { Component } from '@angular/core';
 })
 export class RegisterComponent {
 
+
+  // TODO add aws backend
+  readonly baseUrl: string = "";
+  paramString: string;
+  errorMessage: string = "";
+
+
+  constructor(private http: HttpClient, private router: Router) { }
+
+  ngOnInit() {
+    if (sessionStorage.getItem("loggedIn") == "true") {
+      this.router.navigate(["/"]);
+    }
+  }
+
+  onSubmit(registerForm: NgForm) {
+
+    // TODO remove this
+    console.table(registerForm.value);
+
+    // check that the form is completely filled
+    for (const property in registerForm.value) {
+      if (!registerForm.value[property]) {
+        this.errorMessage = "Error: " + property + " is not completed";
+        return null;
+      }
+    }
+
+    // check that passwords match
+    if (registerForm.value.password != registerForm.value.repassword) {
+      this.errorMessage = "Error: Passwords Do Not Match";
+      return null;
+    }
+
+    this.paramString = `?username=${registerForm.value.username}&password=${registerForm.value.password}&email=${registerForm.value.email}`;
+
+    // this.http.post<registerResponse>((this.baseUrl + this.paramString), null)
+    //   .subscribe((result) => {
+    //     if (result.registerResult == true) {
+    //       sessionStorage.setItem("loggedIn", "true");
+    //       sessionStorage.setItem("username", registerForm.value.username);
+    //       this.router.navigate(["/"]);
+    //     } else {
+    //       this.errorMessage = "Error: Invalid Username or Password";
+    //     }
+    //   })
+
+    return null;
+
+  }
+
+
 }
+
+
+export interface registerResponse {
+  registerResult: boolean;
+}
+
+

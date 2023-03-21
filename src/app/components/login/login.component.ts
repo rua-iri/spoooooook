@@ -12,7 +12,7 @@ export class LoginComponent {
 
   readonly baseUrl: string = "https://3z4kluwtp5.execute-api.us-east-1.amazonaws.com/real/login";
   paramString: string;
-  errorMessage: string = "Error blahblalblbahalhbalh";
+  errorMessage: string = "";
 
 
   constructor(private http: HttpClient, private router: Router) { }

@@ -7,30 +7,38 @@
         </h1>
     </div>
 
-    <div class="login-section">
+    <div class="register-section">
 
 
-        <br><br><br>
 
-        <form action="">
+        <form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)">
 
             <div>
-                <input class="login-input" type="text" placeholder="Username">
+                <input class="register-input" type="text" name="username" placeholder="Username" ngModel>
             </div>
 
             <div>
-                <input class="login-input" type="text" placeholder="Password">
+                <input class="register-input" type="email" name="email" placeholder="Email" ngModel>
             </div>
 
             <div>
-                <button class="botton">
-                    Login
-                </button>
-                <button class="botton">
+                <input class="register-input" type="password" name="password" placeholder="Password" ngModel>
+            </div>
+
+            <div>
+                <input class="register-input" type="password" name="repassword" placeholder="Repeat Password" ngModel>
+            </div>
+
+            <div>
+                <button class="botton" type="submit">
                     Register
                 </button>
             </div>
 
+            <p class="errorBox">
+                {{ errorMessage }}
+            </p>
+            
         </form>
 
     </div>
