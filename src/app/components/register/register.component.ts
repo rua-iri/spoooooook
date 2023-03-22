@@ -11,8 +11,7 @@ import { Router } from '@angular/router';
 export class RegisterComponent {
 
 
-  // TODO add aws backend
-  readonly baseUrl: string = "";
+  readonly baseUrl: string = "https://3z4kluwtp5.execute-api.us-east-1.amazonaws.com/real/register";
   paramString: string;
   errorMessage: string = "";
 
@@ -44,18 +43,24 @@ export class RegisterComponent {
       return null;
     }
 
+    // TODO check that passwords are of a reasonable length
+
+    // TODO check that email is valid??
+
     this.paramString = `?username=${registerForm.value.username}&password=${registerForm.value.password}&email=${registerForm.value.email}`;
 
-    // this.http.post<registerResponse>((this.baseUrl + this.paramString), null)
-    //   .subscribe((result) => {
-    //     if (result.registerResult == true) {
-    //       sessionStorage.setItem("loggedIn", "true");
-    //       sessionStorage.setItem("username", registerForm.value.username);
-    //       this.router.navigate(["/"]);
-    //     } else {
-    //       this.errorMessage = "Error: Invalid Username or Password";
-    //     }
-    //   })
+    this.http.post<registerResponse>((this.baseUrl + this.paramString), null)
+      .subscribe((result) => {
+        console.log(result)
+        if (result.registerResult == true) {
+          this.errorMessage = "";
+          sessionStorage.setItem("loggedIn", "true");
+          sessionStorage.setItem("username", registerForm.value.username);
+          this.router.navigate(["/"]);
+        } else {
+          this.errorMessage = "Error: Invalid Username, Email or Password";
+        }
+      })
 
     return null;
 
