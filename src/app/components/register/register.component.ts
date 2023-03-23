@@ -26,8 +26,6 @@ export class RegisterComponent {
 
   onSubmit(registerForm: NgForm) {
 
-    // TODO remove this
-    console.table(registerForm.value);
 
     // check that the form is completely filled
     for (const property in registerForm.value) {
@@ -47,11 +45,12 @@ export class RegisterComponent {
 
     // TODO check that email is valid??
 
+    // TODO check that all fields do not contain forbidden characters e.g. inverted commas, spaces etc...
+
     this.paramString = `?username=${registerForm.value.username}&password=${registerForm.value.password}&email=${registerForm.value.email}`;
 
     this.http.post<registerResponse>((this.baseUrl + this.paramString), null)
       .subscribe((result) => {
-        console.log(result)
         if (result.registerResult == true) {
           this.errorMessage = "";
           sessionStorage.setItem("loggedIn", "true");

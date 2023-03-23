@@ -1,0 +1,114 @@
+.main-section {
+    background-color: rgba(214, 19, 19, 0.829);
+    height: 89vh;
+    width: auto;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.main-section::after {
+    content: "";
+    background-image: url("https://rua-iri.github.io/spoooooook/assets/images/10461659.jpg");
+    position: absolute;
+    top: 11vh;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.7;
+    z-index: -1;
+}
+
+
+.main-section::-webkit-scrollbar {
+    display: none;
+}
+
+.user-section {
+    margin: 3rem;
+    background-color: rgba(0, 0, 0, 0.781);
+    color: whitesmoke;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    font-family: Helvetica, Arial, sans-serif;
+    border-radius: 0.5rem;
+}
+
+
+.user-panel {
+    position: relative;
+    margin: 1.5rem;
+}
+
+.user-icon {
+    width: 100%;
+    height: auto;
+    max-height: 20rem;
+    z-index: 2;
+    display: block;
+    backface-visibility: hidden;
+}
+
+.user-panel:hover .icon-overlay {
+    cursor: pointer;
+    opacity: 1;
+}
+
+
+.icon-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    color: black;
+    background-color: rgba(219, 211, 211, 0.678);
+    font-size: 2rem;
+    opacity: 1;
+    opacity: 0;
+}
+
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.user-stats {
+    font-size: 1.75rem;
+    margin: 1.5rem;
+}
+
+.u-stat {
+    margin-top: 2.5rem;
+}
+
+
+.bottom-padding {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.footer-section {
+    position: fixed;
+    bottom: 0;
+    background-color: rgba(1, 1, 1, 0.253);
+    width: inherit;
+    font-size: 5vh;
+    color: rgba(247, 236, 236, 0.589);
+    font-family: Shlop;
+}
+
+.footer-section a {
+    text-decoration: unset;
+    color: unset;
+}

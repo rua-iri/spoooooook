@@ -22,7 +22,7 @@
         </a>
     </div>
 
-    <div>
+    <div *ngIf="!isLoggedIn">
         <a routerLink="login">
             Login
         </a>
@@ -31,6 +31,18 @@
         </span>
         <a routerLink="register">
             Register
+        </a>
+    </div>
+
+    <div *ngIf="isLoggedIn">
+        <a routerLink="user">
+            {{ uName }}
+        </a>
+        <span>
+            |
+        </span>
+        <a class="logout-btn" (click)="logout()" >
+            Logout
         </a>
     </div>
 
