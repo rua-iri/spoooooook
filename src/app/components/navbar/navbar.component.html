@@ -22,7 +22,7 @@
         </a>
     </div>
 
-    <div *ngIf="!isLoggedIn">
+    <div *ngIf="!isLoggedIn" class="login-bar">
         <a routerLink="login">
             Login
         </a>
@@ -34,14 +34,15 @@
         </a>
     </div>
 
-    <div *ngIf="isLoggedIn">
+    <div *ngIf="isLoggedIn" class="login-bar">
         <a routerLink="user">
+            <img class="user-icon" src="assets/images/user_icons/1.png" alt="user icon">
             {{ uName }}
         </a>
         <span>
             |
         </span>
-        <a class="logout-btn" (click)="logout()" >
+        <a class="logout-btn" (click)="logout()">
             Logout
         </a>
     </div>

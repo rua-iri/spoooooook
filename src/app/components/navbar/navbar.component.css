@@ -24,6 +24,24 @@ nav a {
     margin-right: 1vw;
 }
 
+nav a:hover {
+    color: 	rgb(248, 94, 94);
+}
+
 .logout-btn {
     cursor: pointer;
+}
+
+.login-bar {
+    display: flex;
+    align-content: center;
+}
+
+
+.user-icon {
+    max-height: 9vh;
+    display: inline;
+    background-color: red;
+    border-radius: 3rem;
+    margin-right: 0.5rem;
 }
