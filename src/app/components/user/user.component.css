@@ -4,8 +4,10 @@
     width: auto;
     overflow-y: scroll;
     overflow-x: hidden;
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
 }
 
 .main-section::after {
@@ -39,6 +41,11 @@
 .user-panel {
     position: relative;
     margin: 1.5rem;
+    background-color: red;
+    display: flex;
+    align-items: center;
+    border-radius: 6rem;
+    max-width: 15rem;
 }
 
 .user-icon {
@@ -69,6 +76,9 @@
     font-size: 2rem;
     opacity: 1;
     opacity: 0;
+    z-index: 3;
+    border-radius: inherit;
+    border-radius: inherit;
 }
 
 .overlay-text {
@@ -90,6 +100,39 @@
     margin-top: 2.5rem;
 }
 
+
+.modal-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 4;
+    background-color: rgba(5, 5, 5, 0.555);
+    cursor: pointer;
+}
+
+.icon-modal {
+    position: relative;
+    background-color: whitesmoke;
+    margin: 5rem;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    border-radius: 10rem;
+    overflow: hidden;
+    cursor: auto;
+}
+
+.icon-box {
+    margin: 0.5rem;
+    cursor: pointer;
+}
+
+.icon-box:hover {
+    background-color: rgba(255, 0, 0, 0.315);
+}
 
 .bottom-padding {
     left: 0;

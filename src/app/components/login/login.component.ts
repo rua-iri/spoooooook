@@ -17,6 +17,7 @@ export class LoginComponent {
 
   constructor(private http: HttpClient, private router: Router) { }
 
+  // TODO 
   ngOnInit() {
     if (sessionStorage.getItem("loggedIn") == "true") {
       this.router.navigate(["/"]);

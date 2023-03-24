@@ -2,8 +2,8 @@
 
     <div class="user-section">
         <div class="user-panel">
-            <img class="user-icon" src="https://github.com/identicons/jasonlong.png" alt="usericon">
-            <div class="icon-overlay">
+            <img class="user-icon" [src]="iconPath" alt="usericon">
+            <div class="icon-overlay" (click)="openModal()">
                 <div class="overlay-text">
                     Click to Change Icon
                 </div>
@@ -25,6 +25,16 @@
                 Change Password
             </p>
 
+        </div>
+    </div>
+
+    <div class="modal-background" [ngStyle]="{'display': modalDisplay}" (click)="closeModal()">
+        <div class="icon-modal">
+            
+            <div class="icon-box" *ngFor="let icn of iconAra" (click)="selectIcon(icn)" >
+                <img [src]="icn" alt="user icon" loading="lazy" >
+            </div>
+            
         </div>
     </div>
 
