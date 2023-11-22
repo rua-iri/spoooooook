@@ -16,9 +16,9 @@ export class MainComponent {
     this.isLoggedIn = JSON.parse(sessionStorage.getItem("loggedIn")!);
 
     // redirect to registration page if not logged in
-    if (!this.isLoggedIn) {
-      this.router.navigate(["register"]);
-    }
+    // if (!this.isLoggedIn) {
+    //   this.router.navigate(["register"]);
+    // }
   }
 
 }

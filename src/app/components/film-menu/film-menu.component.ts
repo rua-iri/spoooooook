@@ -13,7 +13,7 @@ export class FilmMenuComponent implements OnChanges {
   @Input() currentFilmId: string;
   @Output() menuVisible = new EventEmitter<string>();
   filmSpecifics: Observable<FilmDetails[]>
-  readonly baseUrl: string = "https://zkxb1yonjc.execute-api.us-east-1.amazonaws.com/FilmDetails?imdbID=";
+  readonly baseUrl: string = "https://gdmvb87xyf.execute-api.us-east-1.amazonaws.com/Prod/film?imdbID=";
 
   constructor(private http: HttpClient) { }
 

@@ -1,5 +1,9 @@
-<div class="video-section" *ngFor="let vidUrl of videoUrl | async">
-    <video  controls>
-        <source src="{{ vidUrl.filmPath }}" type="video/mp4" >
-    </video>
+<div class="video-section" *ngIf="safeUrl">
+
+
+    <div *ngIf="safeUrl">
+        <iframe width="420" height="315" frameBorder="0" [src]="safeUrl">
+        </iframe>
+    </div>
+
 </div>

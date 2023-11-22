@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
 
-  readonly baseUrl: string = "https://3z4kluwtp5.execute-api.us-east-1.amazonaws.com/real/login";
+  readonly baseUrl: string = "https://gdmvb87xyf.execute-api.us-east-1.amazonaws.com/Prod/user-login";
   paramString: string;
   errorMessage: string = "";
 

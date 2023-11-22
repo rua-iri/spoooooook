@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SecurityContext } from '@angular/core';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { VideoUrl } from 'src/app/videourl';
@@ -9,23 +10,46 @@ import { VideoUrl } from 'src/app/videourl';
   templateUrl: './video.component.html',
   styleUrls: ['./video.component.css']
 })
-export class VideoComponent implements OnInit{
-  
-  public filmId: string;
-  videoUrl: Observable<VideoUrl[]>;
-  readonly baseUrl: string = "https://zkxb1yonjc.execute-api.us-east-1.amazonaws.com/FilmDetails/video?imdbID=";
-  
+export class VideoComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private http: HttpClient) { }
+  public filmId: string;
+  apiResponse: VideoUrl[];
+  videoUrl: string;
+  safeUrl: any;
+
+  readonly baseUrl: string = "https://gdmvb87xyf.execute-api.us-east-1.amazonaws.com/Prod/film-link?imdbID=";
+
+
+  constructor(
+    private route: ActivatedRoute,
+    private http: HttpClient,
+    private domSanitizer: DomSanitizer
+  ) {
+    this.safeUrl = this.domSanitizer.bypassSecurityTrustResourceUrl(this.videoUrl);
+  }
 
   ngOnInit(): void {
     this.filmId = this.route.snapshot.paramMap.getAll("videoId")[0];
     this.getVideo();
+    console.log(this.videoUrl)
   }
 
   // function to get the url for the film 
   getVideo() {
-    this.videoUrl = this.http.get<VideoUrl[]>(this.baseUrl + this.filmId);
+    this.http.get<VideoUrl[]>(this.baseUrl + this.filmId).subscribe(
+      data => {
+        // console.log(data)
+        this.apiResponse = data;
+        // this.apiResponse[0].filmPath = this.domSanitizer.sanitize(SecurityContext.URL, data[0].filmPath);
+        // this.videoUrl = this.domSanitizer.sanitize(SecurityContext.RESOURCE_URL, data[0].filmPath);
+        // this.videoUrl = this.domSanitizer.bypassSecurityTrustResourceUrl(data[0].filmPath)
+        console.log(this.videoUrl)
+        this.safeUrl = this.domSanitizer.bypassSecurityTrustResourceUrl(data[0].filmPath);
+      },
+      error => {
+        // TODO redirect to homepage if film not found etc
+      }
+    );
   }
 
 }

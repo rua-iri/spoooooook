@@ -17,7 +17,7 @@ export class CategoryComponent {
   menuVisible: string;
   currentFilmId: string;
   translateX: number = 0;
-  readonly baseUrl: string = "https://mfiagg0fp7.execute-api.us-east-1.amazonaws.com/genre?category=";
+  readonly baseUrl: string = "https://gdmvb87xyf.execute-api.us-east-1.amazonaws.com/Prod/films?category=";
 
   constructor(private http: HttpClient) { }
 
@@ -29,6 +29,7 @@ export class CategoryComponent {
 
   getFilms() {
     this.filmList = this.http.get<Film[]>(this.baseUrl + this.catName);
+    console.log(this.filmList)
   }
 
 

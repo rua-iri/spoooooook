@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class RegisterComponent {
 
 
-  readonly baseUrl: string = "https://3z4kluwtp5.execute-api.us-east-1.amazonaws.com/real/register";
+  readonly baseUrl: string = "https://gdmvb87xyf.execute-api.us-east-1.amazonaws.com/Prod/user-register";
   paramString: string;
   errorMessage: string = "";
 
