@@ -38,11 +38,7 @@ export class VideoComponent implements OnInit {
   getVideo() {
     this.http.get<VideoUrl[]>(this.baseUrl + this.filmId).subscribe(
       data => {
-        // console.log(data)
         this.apiResponse = data;
-        // this.apiResponse[0].filmPath = this.domSanitizer.sanitize(SecurityContext.URL, data[0].filmPath);
-        // this.videoUrl = this.domSanitizer.sanitize(SecurityContext.RESOURCE_URL, data[0].filmPath);
-        // this.videoUrl = this.domSanitizer.bypassSecurityTrustResourceUrl(data[0].filmPath)
         console.log(this.videoUrl)
         this.safeUrl = this.domSanitizer.bypassSecurityTrustResourceUrl(data[0].filmPath);
       },
