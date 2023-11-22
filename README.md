@@ -1,5 +1,14 @@
 # Spoooooook
-A Streaming Service for Public Domain Horror Films
+
+<div align="center">
+      <div>
+            A Streaming Service for Public Domain Horror Films
+      </div>
+      <br/>
+      <div>
+        <img src="https://github.com/rua-iri/spoooooook/assets/117874491/0c0d4c01-52b1-45a2-a08c-2c28b1a903f7" alt="spoooooook logo" width="40%" />
+      </div>
+</div>
 
 Can be found on my [Github Pages](https://rua-iri.github.io/spoooooook/)
 
